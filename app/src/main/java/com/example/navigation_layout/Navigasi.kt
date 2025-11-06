@@ -21,6 +21,22 @@ fun DataApp(
     Scaffold { isiRuang ->
         NavHost(
             navController = navController,
-            startDestination = Navigasi.Formulir
+            startDestination = Navigasi.Formulir.name,
+
+            modifier = Modifier.padding(paddingValues = isiRuang)){
+            composable(route = Navigasi.Formulir.name){
+                FormIsian(
+                    onSubmitBtnClick = {
+                        navController.navigate(Navigasi.Detail.name)
+                    }
+                )
+            }
+            composable(route = Navigasi.Detail.name){
+                TampilData(
+                    onbackBtnClick = {cancelAndBackToFormulir(navController)}
+                )
+            }
+        }
+
     }
 }
