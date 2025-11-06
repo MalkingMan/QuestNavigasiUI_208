@@ -1,5 +1,7 @@
 package com.example.navigation_layout.view
 
+import android.R
+
 @Composable
 fun FormIsian(
     jenisK: List<String> = listOf("Laki-laki", "Perempuan"),
@@ -18,7 +20,8 @@ fun FormIsian(
         Column(
             modifier = Modifier.padding(paddingValues = isiRuang),
             verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally) {
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             OutlinedTextField(
                 value = "",
                 singleLine = true,
@@ -62,5 +65,13 @@ fun FormIsian(
                 label = { Text(text = "Alamat") },
                 onValueChange = {},
             )
+            spacer(modifier = Modifier.height(height = 30.dp))
+            button(
+                modifier = Modifier.fillMaxWidth(R.fraction = 1f),
+                onClick = OnSubmitBtnClick
+            ) {
+                Text(text = stringResource(id = "Submit"))
+            }
         }
+    }
 
