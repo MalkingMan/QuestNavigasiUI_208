@@ -1,6 +1,6 @@
 package com.example.navigation_layout.view
 
-import android.R
+import com.example.navigation_layout.R
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -25,7 +25,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.example.navigation_layout.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -33,7 +32,8 @@ fun FormIsian(
     jenisK: List<String> = listOf("Laki-laki", "Perempuan"),
     OnSubmitBtnClick: () -> Unit
 ) {
-    Scaffold(modifier = Modifier,
+    Scaffold(
+        modifier = Modifier,
         topBar = {
             TopAppBar(
                 title = { Text(text = stringResource(id = R.string.home), color = Color.White) },
@@ -96,8 +96,12 @@ fun FormIsian(
                 modifier = Modifier.fillMaxWidth(fraction = 1f),
                 onClick = OnSubmitBtnClick
             ) {
-                Text(text = stringResource(id = "Submit"))
+                Text(text = stringResource(id = R.string.submit))
             }
         }
     }
+}
+
+
+    
 
